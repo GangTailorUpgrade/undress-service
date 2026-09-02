@@ -1,0 +1,53 @@
+version: "3.9"
+
+services:
+  dress-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dress-ai-service
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./.env:/app/.env:ro
+    environment:
+      - DATABASE_URL=sqlite:///data/wardrobe.db
+      - MODELS_DIR=/app/models
+      - UPLOAD_DIR=/app/data/uploads
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # Optional: PostgreSQL for production
+  # db:
+  #   image: postgres:16-alpine
+  #   container_name: dress-ai-db
+  #   environment:
+  #     POSTGRES_USER: dressai
+  #     POSTGRES_PASSWORD: dressai_secret
+  #     POSTGRES_DB: dressai
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   restart: unless-stopped
+
+  # Optional: Ollama for local LLM
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   container_name: dress-ai-ollama
+  #   volumes:
+  #     - ollama_data:/root/.ollama
+  #   ports:
+  #     - "11434:11434"
+  #   restart: unless-stopped
+
+# volumes:
+#   postgres_data:
+#   ollama_data:
