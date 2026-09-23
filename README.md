@@ -67,6 +67,7 @@ mkdir -p 'dressai' && cd 'dressai' && npm install github:GangTailorUpgrade/undre
 # Download AI models (first run)
 python scripts/download_models.py
 
+```bash
 # Start the server
 uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload
 ```
@@ -97,8 +98,6 @@ uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload
 │  └────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────┘
 ```
-
----
 
 ## 🛠️ Tech Stack
 
