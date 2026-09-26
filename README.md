@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/GangTailorUpgrade/dress-ai-service/main/docs/logo.png" alt="Dress AI Service" width="180">
-
 # 👗 Dress AI Service
 
 **Self-Hosted AI Outfit Generator & Virtual Wardrobe Stylist**
@@ -33,12 +31,6 @@
 Whether you're a fashion enthusiast, a boutique owner, or a developer building the next generation of fashion tech, Dress AI Service gives you a complete, production-ready foundation.
 
 ---
-
-## 🖼️ Screenshots
-
-| Wardrobe Upload | AI Tagging | Outfit Recommendations | AI Visualization |
-|---|---|---|---|
-| ![Upload](docs/screenshots/upload.png) | ![Tagging](docs/screenshots/tagging.png) | ![Outfits](docs/screenshots/outfits.png) | ![Visualize](docs/screenshots/visualize.png) |
 
 ---
 ## 💖 Sponsors
